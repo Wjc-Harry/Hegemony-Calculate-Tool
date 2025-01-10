@@ -44,38 +44,50 @@ function taxCalculator(option1,option2,population){
     if(option1==="3A",option2==="2A"){
         var PayTaxes=a3a2.taxOfPop*population
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
     }else if (option1==="3A",option2==="2B"){
         var PayTaxes=a3b2.taxOfPop*population
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
 
     }else if (option1==="3A",option2==="2C"){
         var PayTaxes=a3c2.taxOfPop*population
+        
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
 
     }else if (option1==="3B",option2==="2A"){
         var PayTaxes=b3a2.taxOfPop*population
+        
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
 
     }else if (option1==="3B",option2==="2B"){
         var PayTaxes=b3b2.taxOfPop*population
+        
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
 
     }else if (option1==="3B",option2==="2C"){
         var PayTaxes=b3c2.taxOfPop*population
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
 
     }else if (option1==="3C",option2==="2A"){
         var PayTaxes=c3a2.taxOfPop*population
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
 
     }else if (option1==="3C",option2==="2B"){
         var PayTaxes=c3b2.taxOfPop*population
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
 
     }
     else if (option1==="3C",option2==="2C"){
         var PayTaxes=c3c2.taxOfPop*population
         console.log("You should pay:$"+PayTaxes+" tax.")
+        return PayTaxes
 
     }else{
         console.log("something went wrong")

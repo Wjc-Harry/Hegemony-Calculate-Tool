@@ -94,8 +94,14 @@
 <script>
    function finalCalculation(){
     const  { IncomeMarketPolicyValue, LaborMarketPolicyValue, PopulationSelectorValue }=getSelectedValue();
+    
+    
     taxCalculator(IncomeMarketPolicyValue,LaborMarketPolicyValue,PopulationSelectorValue)
-  }
+    const PayTaxes=    taxCalculator(IncomeMarketPolicyValue,LaborMarketPolicyValue,PopulationSelectorValue)
+
+    displayResult(`You should pay:$ ${PayTaxes} tax.`)
+    
+    }
   function getSelectedValue(){
   const IncomeMarketPolicy = document.querySelector('input[name="IncomeTaxPolicy"]:checked')
   const LaborMarketPolicy = document.querySelector('input[name="LaborMarketPolicy"]:checked')
@@ -108,13 +114,15 @@
   console.log(PopulationSelectorValue)
   return { IncomeMarketPolicyValue, LaborMarketPolicyValue, PopulationSelectorValue };
   }
+  function displayResult(message) {
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = message; // Display the result in the div
+      }
 
   
-  
-
 
 </script>
-
+<div id="result"></div>
     </div>
 
 
