@@ -22,23 +22,22 @@
             </div>
     </div>
 
-    <div class="row">
-        <div class="col-4">
-            <div class="text-center">
-                <button type="button" class="btn btn-primary">3A</button>
-            </div>
-        </div>
-        <div class="col-4">
-                <div class="text-center">
-                <button type="button" class="btn btn-primary">3B</button>
-                </div>
-        </div>
-        <div class="col-4">
-            <div class="text-center">
-                <button type="button" class="btn btn-primary">3C</button>
-            </div>
-        </div>
-    </div>
+    <div class="form-check">
+        <h2>Select current income tax based on Policy 3</h2>
+        <p>Select:</p>
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="IncomeTaxPolicy" value="3A" checked>3A
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="IncomeTaxPolicy" value="3B">3B
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="IncomeTaxPolicy" value="3C">3C
+          </label>
+        </form>
+      </div>
+
     <div class="col-12">
         <div class="col-12">
             <div class="text-center">
@@ -48,28 +47,81 @@
             </div>
         
         </div>
+    </div>
+
+
+    <div class="form-check">
+        <h2>Select current income tax based on Policy 2</h2>
+        <p>Select:</p>
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="LaborMarketPolicy" value="2A" checked>2A
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="LaborMarketPolicy" value="2B">2B
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="LaborMarketPolicy" value="2C">2C
+          </label>
+        </form>
+      </div>
+
+<div class="col-12">
+    <div class="col-12">
+        <div class="text-center">
+            <h1>
+                What is your current Population?
+            </h1>
+        </div>
+        <select class="form-select" name ="population"  aria-label="Default select example">
+          <option selected value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+          <option value="6">Six</option>
+          <option value="7">Seven</option>
+          <option value="8">Eight</option>
+          <option value="9">Nine</option>
+          <option value="10">Ten</option>
+        </select>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-4">
-        <div class="text-center">
-            <button type="button" class="btn btn-primary">2A</button>
-        </div>
-    </div>
-    <div class="col-4">
-            <div class="text-center">
-            <button type="button" class="btn btn-primary">2B</button>
-            </div>
-    </div>
-    <div class="col-4">
-        <div class="text-center">
-            <button type="button" class="btn btn-primary">2C</button>
-        </div>
-    </div>
-</div>
+<div class="container">
+    <div class="col-12">
+    <button onclick="finalCalculation()">Calculate</button>
+<script>
+   function finalCalculation(){
+    const  { IncomeMarketPolicyValue, LaborMarketPolicyValue, PopulationSelectorValue }=getSelectedValue();
+    taxCalculator(IncomeMarketPolicyValue,LaborMarketPolicyValue,PopulationSelectorValue)
+  }
+  function getSelectedValue(){
+  const IncomeMarketPolicy = document.querySelector('input[name="IncomeTaxPolicy"]:checked')
+  const LaborMarketPolicy = document.querySelector('input[name="LaborMarketPolicy"]:checked')
+  const PopulationSelector = document.querySelector('select[name="population"]')
+  const IncomeMarketPolicyValue = IncomeMarketPolicy.value
+  const LaborMarketPolicyValue = LaborMarketPolicy.value
+  const PopulationSelectorValue = PopulationSelector.value
+  console.log(IncomeMarketPolicyValue)
+  console.log(LaborMarketPolicyValue)
+  console.log(PopulationSelectorValue)
+  return { IncomeMarketPolicyValue, LaborMarketPolicyValue, PopulationSelectorValue };
+  }
 
+  
+  
+
+
+</script>
+
+    </div>
+
+
+</div>
 
 <script src="bootstrap.bundle.min.js"></script>
+<script src="Calculating tool.js"></script>
 </body>
 
 
