@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        TaxCalculatorCapital
+       
+    </title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="col-12">
+            <div class="col-12">
+                <div class="text-center">
+                    <h1>
+                        Tax calculator for Capitalist Class
+                    </h1>
+                    <h1>
+                        What is current Taxation Policy?
+                    </h1>
+                </div>
+            
+            </div>
+    </div>
+
+    <div class="form-check">
+        <h2>Select current income tax based on Policy 3</h2>
+        <p>Select:</p>
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="IncomeTaxPolicy" value="3A" checked>3A
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="IncomeTaxPolicy" value="3B">3B
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="IncomeTaxPolicy" value="3C">3C
+          </label>
+        </form>
+      </div>
+
+      <div class="col-12">
+        <div class="col-12">
+            <div class="text-center">
+                <h1>
+                    What is current Welfare State: Health Policy?
+                </h1>
+            </div>
+        
+        </div>
+    </div>
+
+
+    <div class="form-check">
+        <h2>Select current Welfare State: Health Policy 4</h2>
+        <p>Select:</p>
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="WelfareStatePolicyHealth" value="4A" checked>4A
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="WelfareStatePolicyHealth" value="4B">4B
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="WelfareStatePolicyHealth" value="4C">4C
+          </label>
+        </form>
+      </div>
+      <div class="col-12">
+        <div class="col-12">
+            <div class="text-center">
+                <h1>
+                    What is current Welfare State: Education Policy?
+                </h1>
+            </div>
+        
+        </div>
+    </div>
+
+
+    <div class="form-check">
+        <h2>Select current Welfare State: Education Policy 5</h2>
+        <p>Select:</p>
+        <form>
+          <label class="radio-inline">
+            <input type="radio" name="WelfareStatePolicyEdu" value="5A" checked>5A
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="WelfareStatePolicyEdu " value="5B">5B
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="WelfareStatePolicyEdu" value="5C">5C
+          </label>
+        </form>
+      </div>
+<div class="col-12">
+    <div class="col-12">
+        <div class="text-center">
+            <h1>
+                What is your current number of operational Companies?
+            </h1>
+        </div>
+        <select class="form-select" name ="Companies"  aria-label="Default select example">
+            <option selected value="0">Zero</option>
+            <option  value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+          <option value="6">Six</option>
+          <option value="7">Seven</option>
+          <option value="8">Eight</option>
+          <option value="9">Nine</option>
+          <option value="10">Ten</option>
+          <option value="11">Eleven</option>
+          <option value="12">Twelve</option>
+        </select>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="col-12">
+        <div class="text-center">
+            <h1>
+                What is your current revenue?
+            </h1>
+        </div>
+        <form>
+            <label for="revenue">Revenue (Number larger than 5):</label>
+            <input type="number" id="revenue" name="revenue" min="5">
+          </form>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="col-12">
+    <button onclick="finalCalculation()">Calculate</button>
+<script>
+   function finalCalculation(){
+    const  {IncomeMarketPolicyValue,WelfareStatePolicyHealthValue,WelfareStatePolicyEduValue,CompaniesSelectorValue,revenueSelectorValue}=getSelectedValue();
+    
+    
+    corporateTaxCal(IncomeMarketPolicyValue,revenueSelectorValue)
+    const CorporateTax= corporateTaxCal(IncomeMarketPolicyValue,revenueSelectorValue)
+
+    employmentTax(IncomeMarketPolicyValue,WelfareStatePolicyHealthValue,WelfareStatePolicyEduValue,CompaniesSelectorValue)
+    const EmploymentTax=  employmentTax(IncomeMarketPolicyValue,WelfareStatePolicyHealthValue,WelfareStatePolicyEduValue,CompaniesSelectorValue);
+    
+
+    displayResult1(`You should pay:$ ${EmploymentTax} employment tax.`)
+    displayResult2(`You should pay:$ ${CorporateTax} corporate tax.`)
+
+    }
+  function getSelectedValue(){
+  const IncomeMarketPolicy = document.querySelector('input[name="IncomeTaxPolicy"]:checked')
+  const WelfareStatePolicyHealth=document.querySelector('input[name="WelfareStatePolicyHealth"]:checked')
+  const WelfareStatePolicyEdu=document.querySelector('input[name="WelfareStatePolicyEdu"]:checked')
+  const CompaniesSelector=document.querySelector('select[name="Companies"]')
+  const revenueSelector=document.getElementById('revenue')
+  const IncomeMarketPolicyValue = IncomeMarketPolicy.value
+  const WelfareStatePolicyHealthValue=WelfareStatePolicyHealth.value
+  const WelfareStatePolicyEduValue=WelfareStatePolicyEdu.value
+  const CompaniesSelectorValue=CompaniesSelector.value 
+  const revenueSelectorValue=revenueSelector.value
+
+  console.log(IncomeMarketPolicyValue)
+  console.log(CompaniesSelectorValue)
+  console.log(revenueSelectorValue)
+  return { IncomeMarketPolicyValue,WelfareStatePolicyHealthValue,WelfareStatePolicyEduValue,CompaniesSelectorValue,revenueSelectorValue};
+  }
+
+  function employmentTax(IncomeMarketPolicyValue,WelfareStatePolicyHealthValue,WelfareStatePolicyEduValue,CompaniesSelectorValue){
+    return taxMultiplierCal(IncomeMarketPolicyValue,WelfareStatePolicyHealthValue,WelfareStatePolicyEduValue)*CompaniesSelectorValue;
+    
+  }
+  
+function displayResult1(message1) {
+      const resultDiv = document.getElementById('result1');
+      resultDiv.textContent = message1; // Display the result in the div
+      }
+function displayResult2(message2) {
+      const resultDiv = document.getElementById('result2');
+      resultDiv.textContent = message2; // Display the result in the div
+      }
+  
+
+</script>
+
+<div class="col-12" id="result1"></div>
+<div class="col-12" id="result2"></div>
+    </div>
+
+
+</div>
+
+<script src="bootstrap.bundle.min.js"></script>
+<script src="Calculating tool.js"></script>
+</body>
+
+
+
+
+
+</html>
+

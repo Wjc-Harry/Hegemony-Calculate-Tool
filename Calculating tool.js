@@ -262,3 +262,108 @@ function taxMultiplierCal(policy3,policy4,policy5){
         }
     }
 }
+
+
+
+function corporateTaxCal(taxPolicy, revenue) {
+    if (taxPolicy === "3A") {
+      if (revenue > 5 && revenue < 9) {
+        var corporateTax = 1;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 10 && revenue < 24) {
+        var corporateTax = 5;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 25 && revenue < 49) {
+        var corporateTax = 12;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 50 && revenue < 99) {
+        var corporateTax = 24;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 100 && revenue < 199) { // Corrected condition
+        var corporateTax = 40;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 200 && revenue < 299) {
+        var corporateTax = 100;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 300) {
+        var corporateTax = 160;
+        console.log(corporateTax);
+        return corporateTax;
+      } else {
+        return "Please input a correct number larger than 5.";
+      }
+    } else if (taxPolicy === "3B") {
+      if (revenue > 5 && revenue < 9) {
+        var corporateTax = 2;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 10 && revenue < 24) {
+        var corporateTax = 5;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 25 && revenue < 49) {
+        var corporateTax = 10;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 50 && revenue < 99) {
+        var corporateTax = 15;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 100 && revenue < 199) { // Corrected condition
+        var corporateTax = 30;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 200 && revenue < 299) {
+        var corporateTax = 70;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 300) {
+        var corporateTax = 120;
+        console.log(corporateTax);
+        return corporateTax;
+      } else {
+        return "Please input a correct number larger than 5.";
+      }
+    } else if (taxPolicy === "3C") {
+      if (revenue > 5 && revenue < 9) {
+        var corporateTax = 2;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 10 && revenue < 24) {
+        var corporateTax = 4;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 25 && revenue < 49) {
+        var corporateTax = 7;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 50 && revenue < 99) {
+        var corporateTax = 10;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 100 && revenue < 199) { // Corrected condition
+        var corporateTax = 20;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 200 && revenue < 299) {
+        var corporateTax = 40;
+        console.log(corporateTax);
+        return corporateTax;
+      } else if (revenue > 300) {
+        var corporateTax = 60;
+        console.log(corporateTax);
+        return corporateTax;
+      } else {
+        return "Please input a correct number larger than 5.";
+      }
+    }
+    return "Invalid tax policy.";
+  }
+  
+  console.log(corporateTaxCal("3A", 400)); 
