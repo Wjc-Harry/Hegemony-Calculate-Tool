@@ -14,6 +14,9 @@
                     <h1>
                         Tax calculator
                     </h1>
+                    <audio loop controls>
+                        <source src="SpringDayShadow.ogg" type="audio/ogg">
+                    </audio>
                     <h1>
                         What is your role?
                     </h1>
@@ -42,7 +45,24 @@
             </div>
         </div>
     </div>
-
+    <div class="text-center">
+        <label>English Rulebook</label><br>
+        <embed src="Hegemony_-_English_Rulebook_v1.2_-_Highlighted_Changes.pdf"style="width: 100%; border: none" height="1500px" >
+    </div>
+    <div class="text-center">
+        <label>Chinese Rulebook</label>
+        <iframe src="Hegemony_RULEBOOK_CH_web.pdf" style="width: 100%; border: none" height="1500px"></iframe>
+    </div>
+    <div class="col-12">
+        <label for="rating">Please rate this website</label>
+        <input type="range" min="1" max="5" id="rating" name="rating" list="ratings">
+        <datalist id="ratings">
+            <option value="1" label="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5" label="5"></option>
+        </datalist></div>
 
 <script src="bootstrap.bundle.min.js"></script>
 </body>
